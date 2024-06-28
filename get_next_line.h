@@ -6,7 +6,7 @@
 /*   By: bde-luce <bde-luce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 19:05:26 by bde-luce          #+#    #+#             */
-/*   Updated: 2024/06/26 12:33:18 by bde-luce         ###   ########.fr       */
+/*   Updated: 2024/06/28 12:00:56 by bde-luce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 char	*get_next_line(int fd);
 char	*get_buf(int fd, char *rest);
 int		check_nl(char *buf);
-size_t		str_len(char *str);
+size_t	str_len(char *str);
 char	*join_buf(char *s1, char *s2);
 char	*get_line(char *rest);
 char	*get_rest(char *rest);

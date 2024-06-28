@@ -6,7 +6,7 @@
 /*   By: bde-luce <bde-luce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 16:14:08 by bde-luce          #+#    #+#             */
-/*   Updated: 2024/06/26 13:20:27 by bde-luce         ###   ########.fr       */
+/*   Updated: 2024/06/28 12:02:04 by bde-luce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ size_t	str_len(char *str)
 char	*join_buf(char *rest, char *buf)
 {
 	char	*str;
-	size_t		i;
-	size_t		j;
+	size_t	i;
+	size_t	j;
 
 	if (!rest)
 	{
