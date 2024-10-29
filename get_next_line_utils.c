@@ -6,7 +6,7 @@
 /*   By: bde-luce <bde-luce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 16:14:08 by bde-luce          #+#    #+#             */
-/*   Updated: 2024/06/28 12:02:04 by bde-luce         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:19:09 by bde-luce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ size_t	str_len(char *str)
 
 char	*join_buf(char *rest, char *buf)
 {
-	char	*str;
-	size_t	i;
-	size_t	j;
+	char		*str;
+	size_t		i;
+	size_t		j;
 
 	if (!rest)
 	{
@@ -69,56 +69,27 @@ char	*join_buf(char *rest, char *buf)
 	return (str);
 }
 
-char	*get_line(char *rest)
+void	copy_line(char *str_copy, char *str)
 {
-	int		i;
-	int		b;
-	char	*str;
+	int	i;
 
 	i = 0;
-	if (!rest[i])
-		return (NULL);
-	while (rest[i] && rest[i] != '\n')
-		i++;
-	b = 1;
-	if (rest[i] == '\n')
-		b = 2;
-	str = malloc(sizeof(char) * (i + b));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (rest[i] && rest[i] != '\n')
+	while (str[i] && str[i] != '\n')
 	{
-		str[i] = rest[i];
+		str_copy[i] = str[i];
 		i++;
 	}
-	if (rest[i] == '\n')
-		str[i++] = '\n';
-	str[i] = '\0';
-	return (str);
+	if (str[i] == '\n')
+		str_copy[i++] = '\n';
+	str_copy[i] = '\0';
 }
 
-char	*get_rest(char *rest)
+void	copy_rest(char *str_copy, char *str, int j)
 {
-	int		i;
-	int		j;
-	char	*new_rest;
+	int	i;
 
 	i = 0;
-	while (rest[i])
-		i++;
-	j = 0;
-	while (rest[j] && rest[j] != '\n')
-		j++;
-	if (rest[j] == '\n')
-		j++;
-	new_rest = malloc(sizeof(char) * (i - j + 1));
-	if (!new_rest)
-		return (NULL);
-	i = 0;
-	while (rest[j])
-		new_rest[i++] = rest[j++];
-	new_rest[i] = '\0';
-	free(rest);
-	return (new_rest);
+	while (str[j])
+		str_copy[i++] = str[j++];
+	str_copy[i] = '\0';
 }
